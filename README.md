@@ -95,3 +95,16 @@ Siga e apoie o projeto também nas redes sociais:
 A todas as mãos que ajudam a abraçar, acolher e transformar. Cada gesto de amor faz a diferença.
 **“Abrace um RN” é mais do que um projeto, é um chamado ao cuidado e à empatia.**
 
+## 🔽 Como clonar este projeto
+
+Para clonar e utilizar este repositório em sua máquina local, siga os passos abaixo:
+
+# 1. Clone este repositório
+git clone https://github.com/Lorran-Kaio/Abrace-um-rn.git
+
+# 2. Acesse a pasta do projeto
+cd Abrace-um-rn
+
+# 3. (Opcional) Caso queira usar a branch específica com a licença:
+git checkout Lorran-Kaio-LICENSE
+
