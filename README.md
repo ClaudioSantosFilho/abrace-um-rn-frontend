@@ -92,8 +92,36 @@ Siga e apoie o projeto também nas redes sociais:
 
 ## 🤝 Agradecimentos
 
-A todas as mãos que ajudam a abraçar, acolher e transformar. Cada gesto de amor faz a diferença.
+A todas as mãos que ajudam a abraçar, acolher e transformam a vida de muitas pessoas. Cada gesto de amor faz a diferença.
 **“Abrace um RN” é mais do que um projeto, é um chamado ao cuidado e à empatia.**
+
+---
+
+## 🚀 Como Executar o Projeto Localmente
+
+Como o projeto utiliza funcionalidades modernas do JavaScript, especificamente **ES Modules** (como `<script type="module">` e sintaxe `import/export`), a aplicação **não vai funcionar se você abrir o arquivo `index.html` diretamente** com dois cliques. O seu navegador bloqueará os scripts por políticas de segurança (CORS).
+
+Para rodar o projeto corretamente, você deve servir a pasta através de um **Servidor Local (Web Server)**. Abaixo estão as três formas mais simples de fazer isso:
+
+### Opção 1: Via VS Code (Recomendada)
+1. No Visual Studio Code, vá na aba de Extensões e instale o **Live Server** (Extensão do Ritwick Dey).
+2. Abra a pasta raiz deste projeto no VS Code.
+3. Clique com o botão direito do mouse no arquivo `index.html` e escolha a opção **"Open with Live Server"** (ou clique no "Go Live" no rodapé direito).
+4. O navegador abrirá a tela automaticamente (Geralmente em `http://127.0.0.1:5500`).
+
+### Opção 2: Via Node.js (`npx`)
+Se você possui o Node.js instalado no seu computador:
+1. Abra o terminal na pasta raiz do projeto.
+2. Digite o comando: `npx serve .`
+3. Acesse a URL que ele gerar no terminal (Normalmente `http://localhost:3000`).
+
+### Opção 3: Via Python
+Se você possui Python3 instalado:
+1. Abra o terminal na pasta raiz do projeto.
+2. Digite o comando: `python -m http.server 8000`
+3. Pelo navegador, acesse: `http://localhost:8000`.
+
+---
 
 ## 🔽 Como clonar este projeto
 

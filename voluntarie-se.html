@@ -30,7 +30,7 @@
       defer
     ></script>
     <script defer src="js/custom-elements.js"></script>
-    <script defer src="js/form-voluntario.js"></script>
+    <script type="module" src="src/pages/voluntariado/voluntariado-viewmodel.js"></script>
   </head>
   <body>
     <app-header></app-header>
@@ -186,12 +186,13 @@
           </div>
 
           <div class="d-flex justify-content-center">
-            <button
+            <app-button
               type="submit"
-              class="botao btn-form-voluntario rosa-letra-branca"
+              class="btn-form-voluntario"
+              variant="rosa-letra-branca"
             >
               Enviar
-            </button>
+            </app-button>
           </div>
         </form>
 
