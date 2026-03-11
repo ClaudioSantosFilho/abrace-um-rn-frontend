@@ -161,12 +161,35 @@ Se você possui Python3 instalado:
 
 Para clonar e utilizar este repositório em sua máquina local, siga os passos abaixo:
 
-# 1. Clone este repositório
-git clone https://github.com/Lorran-Kaio/Abrace-um-rn.git
+### 1. Clone este repositório
+git clone https://github.com/ClaudioSantosFilho/abrace-um-rn-frontend.git
 
-# 2. Acesse a pasta do projeto
-cd Abrace-um-rn
+### 2. Acesse a pasta do projeto
+cd abrace-um-rn-frontend
 
-# 3. (Opcional) Caso queira usar a branch específica com a licença:
-git checkout Lorran-Kaio-LICENSE
+--- 
 
+## 🤝 Créditos:
+
+### Professora: 
+
+- Roberta Ribeiro Guedes Pereira 
+
+### Equipe responsável pelo projeto atualmente 2026.01:
+
+- [Alef Emauel Marques Verissimo](https://github.com/Destroier650)
+- [Claudio Alves dos Santos Filho](https://github.com/ClaudioSantosFilho)
+- [Gabriel Barbosa Claudino]()
+- [Gilberto Henriques da Fonseca Segundo](https://github.com/Sircrawler)
+- [Jeferson Thiago Felix do Nascimento]()
+- [Mateus Dantas de Oliveira](https://github.com/MateusDantas123)
+- [Nikson Gabriel Santos Silva]()
+- [Thomas Arlles da Silva](https://github.com/Thomasarlles)
+
+### Equipe responsável por dar ínicio ao projeto Abrace um RN: 
+- [Amxdiogo](https://github.com/amxdiogo)
+- [kcaiosouza](https://github.com/kcaiosouza)
+- [Lorran-Kaio](https://github.com/Lorran-Kaio)
+- [LuizAlbar](https://github.com/LuizAlbar)
+- [MartinelliCHS](https://github.com/MartinelliCHS)
+- [raiane-oliveira](https://github.com/raiane-oliveira)
