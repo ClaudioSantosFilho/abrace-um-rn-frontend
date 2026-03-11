@@ -31,9 +31,12 @@ export class LojinhaViewModel {
 
     this.renderizarProdutos();
     
-    // Make global for modal interaction from inline HTML
-    window.abrirDetalheProduto = this.abrirDetalheProduto.bind(this);
-    window.fecharModal = this.fecharModal.bind(this);
+    // Listen to custom events from the web components
+    document.addEventListener('view-details', (e) => {
+        const id = e.detail?.id || e.target.getAttribute('produto-id');
+        this.abrirDetalheProduto(Number(id));
+    });
+
     window.entrarEmContato = this.entrarEmContato.bind(this);
     window.entrarEmContatoWhatsApp = this.entrarEmContatoWhatsApp.bind(this);
   }
@@ -53,24 +56,11 @@ export class LojinhaViewModel {
     this.container.innerHTML = this.produtosFiltrados
       .map(
         (produto) => `
-      <div class="product-card" onclick="abrirDetalheProduto(${produto.id})">
-        <div class="product-image-container">
-          <img src="${produto.imagem}" alt="${produto.nome}" class="product-image" loading="lazy">
-          <div class="product-overlay">
-            <button class="btn-view-product">
-              <i class="material-icons">visibility</i>
-              Ver Produto
-            </button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h3 class="product-name">${produto.nome}</h3>
-          <p class="product-description">${produto.descricao}</p>
-          <app-button variant="pequeno-rosa" onclick="event.stopPropagation(); entrarEmContato(${produto.id})">
-            <i class="material-icons me-2" style="font-size: 18px">message</i> Enviar DM
-          </app-button>
-        </div>
-      </div>
+      <product-card produto-id="${produto.id}" nome="${produto.nome}" descricao="${produto.descricao}" imagem="${produto.imagem}">
+        <app-button slot="action" variant="pequeno-rosa" onclick="event.stopPropagation(); entrarEmContato(${produto.id})">
+           <i class="material-icons me-2" style="font-size: 18px">message</i> Enviar DM
+        </app-button>
+      </product-card>
     `
       )
       .join('');
@@ -109,45 +99,29 @@ export class LojinhaViewModel {
     const produto = this.produtos.find((p) => p.id === produtoId);
     if (!produto) return;
 
-    const modal = document.createElement('div');
-    modal.className = 'product-modal';
+    let modal = document.querySelector('product-modal');
+    if (!modal) {
+        modal = document.createElement('product-modal');
+        document.body.appendChild(modal);
+    }
+    
+    modal.setAttribute('produto-id', produto.id);
+    modal.setAttribute('nome', produto.nome);
+    modal.setAttribute('descricao', produto.descricao);
+    modal.setAttribute('imagem', produto.imagem);
+    
     modal.innerHTML = `
-      <div class="modal-overlay" onclick="fecharModal()">
-        <div class="modal-content" onclick="event.stopPropagation()">
-          <button class="modal-close" onclick="fecharModal()">
-            <i class="material-icons">close</i>
-          </button>
-          <div class="modal-body pb-0">
-            <div class="modal-image">
-              <img src="${produto.imagem}" alt="${produto.nome}">
-            </div>
-            <div class="modal-info">
-              <h2>${produto.nome}</h2>
-              <p class="modal-description">${produto.descricao}</p>
-              <div class="modal-actions d-flex gap-3">
-                <app-button variant="pequeno-rosa" onclick="entrarEmContato(${produto.id})">
-                  <i class="material-icons me-2" style="font-size: 18px">message</i> Instagram
-                </app-button>
-                <app-button variant="pequeno-azul" onclick="entrarEmContatoWhatsApp(${produto.id})">
-                  <i class="material-icons me-2" style="font-size: 18px">phone</i> WhatsApp
-                </app-button>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div slot="actions" style="display: flex; gap: 1rem;">
+        <app-button variant="pequeno-rosa" onclick="entrarEmContato(${produto.id})">
+          <i class="material-icons me-2" style="font-size: 18px">message</i> Instagram
+        </app-button>
+        <app-button variant="pequeno-azul" onclick="entrarEmContatoWhatsApp(${produto.id})">
+          <i class="material-icons me-2" style="font-size: 18px">phone</i> WhatsApp
+        </app-button>
       </div>
     `;
 
-    document.body.appendChild(modal);
-    setTimeout(() => modal.classList.add('show'), 10);
-  }
-
-  fecharModal() {
-    const modal = document.querySelector('.product-modal');
-    if (modal) {
-      modal.classList.remove('show');
-      setTimeout(() => modal.remove(), 300);
-    }
+    setTimeout(() => modal.show(), 10);
   }
 
   entrarEmContato() {
