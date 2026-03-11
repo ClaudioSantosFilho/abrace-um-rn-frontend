@@ -24,7 +24,41 @@ Faça parte da mudança e contribua com o Projeto Abrace um Recém-Nascido! Há 
 
 ---
 
-## 🌐 Estrutura do Projeto
+## 📂 Arquitetura e Estrutura de Pastas
+
+O frontend do projeto foi modernizado e refatorado utilizando princípios de **Atomic Design** (para componentização e CSS) e o padrão **MVVM** (Model-View-ViewModel para separação lógica e controle de estado em JavaScript Vanilla).
+
+### Estrutura da Pasta `src`
+
+A pasta `src` contém todos os recursos estáticos, de estilo e scripts organizados de forma modular:
+
+```text
+src/
+├── assets/        # Imagens, ilustrações e ícones separados por contexto (galeria, home, shared, etc)
+├── components/    # Componentes visuais modulares (Web Components Vanilla) baseados no Atomic Design
+│   ├── atoms/     # Elementos únicos e indivisíveis (ex: <app-button> - botões personalizados)
+│   ├── molecules/ # Combinação de átomos (ex: <social-links>, <product-card>, <form-field>)
+│   └── organisms/ # Seções completas formadas por átomos e moléculas (ex: <app-header>, <app-footer>, <product-modal>)
+├── js/            # Scripts de configuração global (ex: registro unificado de componentes em custom-elements.js)
+├── pages/         # Estilos (CSS) e lógica (JS) encapsulados por página
+│   ├── home/      # Ex: home.css (estilos da tela), home-model.js (dados), home-viewmodel.js (eventos da DOM)
+│   ├── lojinha/   # Regras de negócio de produtos, busca e interações da lojinha
+│   ├── voluntaria-se/
+│   └── ...        
+├── utils/         # Scripts e ferramentas Node.js utilitárias usadas para organizar e refatorar arquivos (ex: fix_paths.js)
+└── shared/        # Arquivos globais para todo o projeto
+    └── css/       # reset.css e globals.css (variáveis CSS de cores, fontes, utilitários, responsividade base)
+```
+
+### 🧩 Como os Componentes (Web Components) Funcionam
+Graças à adoção do **Atomic Design** com Custom Elements nativos do HTML5, componentes repetitivos foram extraídos para diretórios próprios. Por exemplo, em vez de repetir classes do Bootstrap espalhadas pelos arquivos, nós usamos tags diretas:
+* Ao invés de usar `<div>` ou `<a>` complexas, utiliza-se `<app-button variant="rosa-escuro">Ajudar</app-button>`.
+* Em vez de dezenas de linhas de CSS jogados na raiz do projeto, o `<app-header>` domina o topo encapsulando sua própria lógica e HTML interno.
+Isso deixa os arquivos HTML na raiz limpos ("declarativos") e com manutenção descentralizada.
+
+---
+
+## 🌐 Páginas do Site
 
 ### `index.html` – Página Inicial
 
