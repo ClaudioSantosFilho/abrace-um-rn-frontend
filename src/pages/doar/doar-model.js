@@ -4,19 +4,19 @@ export class DoarModel {
       {
         id: 'money',
         title: 'DOAÇÃO EM DINHEIRO',
-        icon: './assets/Icone-doar-em-dinheiro.svg',
+        icon: './src/assets/shared/Icone-doar-em-dinheiro.svg',
         description: 'Contribua com qualquer valor para a compra de itens essenciais, como kits de higiene e enxoval, ou para ajudar a cobrir custos operacionais, como transporte e manutenção da sede.'
       },
       {
         id: 'used',
         title: 'DOAÇÃO DE ITENS USADOS',
-        icon: './assets/Icone-doar-usados.svg',
+        icon: './src/assets/shared/Icone-doar-usados.svg',
         description: 'Doe roupas, brinquedos e outros itens de bebê que você não usa mais. Esses itens serão entregues diretamente às mães que precisam de ajuda.'
       },
       {
         id: 'store',
         title: 'COMPRE NA LOJINHA',
-        icon: './assets/Icone-lojinha.svg',
+        icon: './src/assets/shared/Icone-lojinha.svg',
         description: 'Apoie o projeto comprando produtos customizados na nossa lojinha. Todo o dinheiro arrecadado com as vendas será revertido para as ações sociais, ajudando ainda mais mães a cuidarem dos seus bebês.'
       }
     ];
@@ -29,7 +29,7 @@ export class DoarModel {
           <div class="qr-container d-flex flex-column align-items-center">
             <h2 class="h3 mb-4 fw-semibold" style="color: var(--rosa-escuro)">Faça sua doação aqui:</h2>
             <div class="gap-3 d-flex flex-column align-items-center">
-              <img class="qr-code rounded" src="./assets/qrcode-pix.jpeg" width="200" height="auto" alt="QR Code">
+              <img class="qr-code rounded" src="./src/assets/shared/qrcode-pix.jpeg" width="200" height="auto" alt="QR Code">
               <h4 class="mt-3 px-3 fw-semibold text-secondary">Chave PIX: 262.191.664-34</h4>
               <h5 class="mt-2 px-3 fw-medium text-secondary">Nome: Maria Cavalcanti Freire</h5>
               <h5 class="mt-2 px-3 fw-medium text-secondary">Banco: Banco do Brasil</h5>

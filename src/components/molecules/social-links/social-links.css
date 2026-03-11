@@ -2,6 +2,8 @@
   display: flex;
   align-items: center;
   gap: var(--social-gap, 0.5rem);
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 ::slotted(a) {

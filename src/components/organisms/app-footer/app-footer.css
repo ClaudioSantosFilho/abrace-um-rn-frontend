@@ -39,3 +39,21 @@ footer {
   line-height: normal;
   width: 188px;
 }
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .footer-left {
+    justify-content: center;
+  }
+
+  .footer-right p {
+    text-align: center;
+    width: 100%;
+  }
+}
+

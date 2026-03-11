@@ -22,7 +22,7 @@ class AppHeader extends HTMLElement {
     <header class="app-header">
       <div class="container app-header-content">
         <a href="index.html" class="logo">
-          <img src="assets/Logo.png" width="80" height="60" />
+          <img src="src/assets/shared/Logo.png" width="80" height="60" />
         </a>
 
         <div class="desktop-nav">
@@ -77,7 +77,7 @@ class AppHeader extends HTMLElement {
         <div class="offcanvas sidebar-container offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
             <a href="index.html" class="logo">
-              <img src="assets/Logo.png" width="80" height="60" />
+              <img src="src/assets/shared/Logo.png" width="80" height="60" />
             </a>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
           </div>

@@ -18,16 +18,16 @@ class AppFooter extends HTMLElement {
       <footer>
         <div class="footer-container">
           <div class="footer-left">
-            <img src="./assets/LogoTexto.png" alt="LogoText" class="footer-logo" />
+            <img src="./src/assets/shared/LogoTexto.png" alt="LogoText" class="footer-logo" />
           </div>
           <div class="footer-right">
             <p>Acompanhe nas redes</p>
             <social-links>
               <a target="_blank" href="https://www.instagram.com/abraceumrn/">
-                <img src="./assets/instagram.svg" alt="Instagram" />
+                <img src="./src/assets/shared/instagram.svg" alt="Instagram" />
               </a>
               <a target="_blank" href="https://api.whatsapp.com/send/?phone=5583987075415&text=&type=phone_number&app_absent=0">
-                <img src="./assets/wpp.svg" alt="WhatsApp" />
+                <img src="./src/assets/shared/wpp.svg" alt="WhatsApp" />
               </a>
             </social-links>
           </div>
