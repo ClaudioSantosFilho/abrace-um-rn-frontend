@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Abrace um RN</title>
-    <link rel="icon" type="image/x-icon" href="assets/Logo.png" />
+    <link rel="icon" type="image/x-icon" href="src/assets/shared/Logo.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
       rel="stylesheet"
@@ -19,9 +19,9 @@
       integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
       crossorigin="anonymous"
     />
-    <link href="css/reset.css" rel="stylesheet" />
-    <link href="css/globals.css" rel="stylesheet" />
-    <link href="css/home.css" rel="stylesheet" />
+    <link href="src/shared/css/reset.css" rel="stylesheet" />
+    <link href="src/shared/css/globals.css" rel="stylesheet" />
+    <link href="src/pages/home/home.css" rel="stylesheet" />
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js"
@@ -29,7 +29,8 @@
       crossorigin="anonymous"
       defer
     ></script>
-    <script defer src="js/custom-elements.js"></script>
+    <script defer src="src/js/custom-elements.js"></script>
+    <script type="module" src="src/pages/home/home-viewmodel.js"></script>
   </head>
   <body class="mat-typography">
     <app-header></app-header>
@@ -40,7 +41,7 @@
           <div class="home-hero__texts">
             <div aria-hidden="true" class="svg-blob">
               <img
-                src="./assets/Blob inteiro.svg"
+                src="./src/assets/home/Blob inteiro.svg"
                 alt="Fundo Rosa"
                 class="svg-blob-image"
               />
@@ -53,16 +54,16 @@
               </p>
               <div class="social-icons">
                 <a target="_blank" href="https://www.instagram.com/abraceumrn/">
-                  <img src="./assets/instagram.svg" alt="Instagram" />
+                  <img src="./src/assets/shared/instagram.svg" alt="Instagram" />
                 </a>
                 <a target="_blank" href="#">
-                  <img src="./assets/facebook.svg" alt="Facebook" />
+                  <img src="./src/assets/home/facebook.svg" alt="Facebook" />
                 </a>
                 <a
                   target="_blank"
                   href="https://api.whatsapp.com/send/?phone=5583987075415&text=&type=phone_number&app_absent=0"
                 >
-                  <img src="./assets/wpp.svg" alt="WhatsApp" />
+                  <img src="./src/assets/shared/wpp.svg" alt="WhatsApp" />
                 </a>
               </div>
             </div>
@@ -71,7 +72,7 @@
           <div class="home-hero__img__container">
             <div class="home-hero__img">
               <img
-                src="./assets/img-mulher-abracando-bebe.webp"
+                src="./src/assets/home/img-mulher-abracando-bebe.webp"
                 alt="Mãe abraçando bebê"
               />
             </div>
@@ -82,7 +83,7 @@
       <section class="app-missao">
         <div>
           <img
-            src="./assets/svg-mulher-amamentando-bebe.svg"
+            src="./src/assets/home/svg-mulher-amamentando-bebe.svg"
             alt="Mulher amamentando bebe"
             class="svg-mulher-amamentando"
             width="131"
@@ -97,7 +98,7 @@
         </div>
         <div>
           <img
-            src="./assets/svg-mulher-abracando-bebe.svg"
+            src="./src/assets/home/svg-mulher-abracando-bebe.svg"
             alt="Mulher abracando bebe"
             class="svg-mulher-abracando"
             width="158"
@@ -111,7 +112,7 @@
         </div>
         <div>
           <img
-            src="./assets/svg-dedos-tocando.svg"
+            src="./src/assets/home/svg-dedos-tocando.svg"
             alt="Dedos tocando"
             class="svg-dedos-tocando"
             width="180"
@@ -128,35 +129,35 @@
 
       <section class="app-participar-doacao">
         <img
-          src="./assets/svg-detalhe-ondinha.svg"
+          src="./src/assets/home/svg-detalhe-ondinha.svg"
           alt="Detalhe ondinha"
           class="svg-detalhe-ondinha"
         />
 
         <div class="container">
-          <div class="container-preciso-ajuda card-participar-doacao">
-            <h1>PRECISO DE AJUDA</h1>
-            <p>
+          <action-card variant="azul">
+            <h1 slot="title">PRECISO DE AJUDA</h1>
+            <p slot="description">
               Se você é mãe e precisa de auxílio para cuidar do seu bebê, clique
               no botão e preencha seus dados. Entraremos em contato o mais
               rápido possível.
             </p>
-            <a href="receber.html" class="botao branco-letra-azul"> Ajuda </a>
-          </div>
+            <app-button slot="action" href="receber.html" variant="branco-letra-azul"> Ajuda </app-button>
+          </action-card>
 
-          <div class="container-quero-ajuda card-participar-doacao">
-            <h1>
+          <action-card variant="rosa">
+            <h1 slot="title">
               QUERO <br />
               AJUDAR
             </h1>
-            <p>
+            <p slot="description">
               Você pode contribuir de várias formas: doando itens usados,
               dinheiro, ou comprando produtos personalizados na nossa lojinha.
             </p>
-            <a href="doar-inicial.html" class="botao branco-letra-rosa">
+            <app-button slot="action" href="doar-inicial.html" variant="branco-letra-rosa">
               Contribuir
-            </a>
-          </div>
+            </app-button>
+          </action-card>
         </div>
       </section>
 
@@ -183,79 +184,7 @@
             </button>
 
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="card-ajudados">
-                  <img
-                    src="./assets/img-1.png"
-                    alt=""
-                    width="393"
-                    height="479"
-                  />
-                  <p>
-                    Essa mãe estava prestes a doar sua filha ao nascer, em um
-                    ato de desespero por não ter condições de cuidar do bebê.
-                    Mas Deus agiu através do nosso projeto, e a história tomou
-                    um novo rumo. Com sua contribuição, essa transformação foi
-                    possível! Hoje, esse bebê está com sua mãe, e sua
-                    generosidade mudou suas vidas.
-                  </p>
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="card-ajudados">
-                  <img
-                    src="./assets/img-2.png"
-                    alt=""
-                    width="393"
-                    height="479"
-                  />
-                  <p>
-                    Djanete não pôde levar sua bebê para casa após a alta, pois
-                    faltavam roupas. Com a nossa doação, elas finalmente
-                    voltaram para casa. Djanete, que dorme com três filhos,
-                    incluindo um com hidrocefalia, em uma única cama, recebeu
-                    berço, colchão, roupas e outros itens essenciais, trazendo
-                    mais conforto para sua família.
-                  </p>
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="card-ajudados">
-                  <img
-                    src="./assets/img-3.png"
-                    alt=""
-                    width="393"
-                    height="479"
-                  />
-                  <p>
-                    Essa é a mamãe Cida! Seu bebê, Henrique, nasceu em casa, e
-                    foi sua filha de 5 anos que o segurou. Sem roupas para
-                    aquecer o bebê, chegaram ao hospital, e nós levamos um
-                    enxoval completo. Mesmo nas dificuldades, Henrique nasceu
-                    saudável e com dignidade. Deus é fiel!
-                  </p>
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="card-ajudados">
-                  <img
-                    src="./assets/img-4.png"
-                    alt=""
-                    width="393"
-                    height="479"
-                  />
-                  <p>
-                    Esta é Aluska, uma gestante de 8 meses que precisa antecipar
-                    o parto devido a uma cardiopatia. Com recursos escassos, ela
-                    não conseguiu preparar o enxoval da bebê. Graças ao nosso
-                    projeto, conseguimos prover tudo o que ela e sua bebê
-                    precisavam. Que chegue com saúde, em nome de Jesus!
-                  </p>
-                </div>
-              </div>
+              <!-- Rendered by HomeViewModel -->
             </div>
 
             <button
@@ -273,38 +202,13 @@
           </div>
 
           <div class="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#carousel-conhecer-ajudados"
-              data-bs-slide-to="0"
-              class="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carousel-conhecer-ajudados"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carousel-conhecer-ajudados"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carousel-conhecer-ajudados"
-              data-bs-slide-to="3"
-              aria-label="Slide 4"
-            ></button>
+            <!-- Rendered by HomeViewModel -->
           </div>
         </div>
 
         <div class="content-abaixo-de-ajudados container">
           <span>Confira mais casos em nossa galeria de ajuda!</span>
-          <a class="botao branco-letra-azul" href="galeria.html"> Galeria </a>
+          <app-button variant="branco-letra-azul" href="galeria.html"> Galeria </app-button>
         </div>
 
         <div class="rolar-pra-cima"></div>
@@ -317,9 +221,9 @@
             várias formas de apoiar essa causa. Escolha como e quando você pode
             ajudar!
           </p>
-          <a class="botao branco-letra-rosa" href="voluntarie-se.html"
-            >Quero ser voluntário
-          </a>
+          <app-button variant="branco-letra-rosa" href="voluntarie-se.html">
+            Quero ser voluntário
+          </app-button>
         </div>
       </section>
     </main>

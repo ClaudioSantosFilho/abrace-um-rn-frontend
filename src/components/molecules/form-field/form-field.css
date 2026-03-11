@@ -1,0 +1,34 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 200px;
+}
+
+label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--label-color, #444444);
+  font-family: var(--font-family, "Montserrat", sans-serif);
+}
+
+::slotted(input),
+::slotted(select),
+::slotted(textarea) {
+  padding: 10px 12px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fff;
+  font-family: var(--font-family, "Montserrat", sans-serif);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+::slotted(input:focus),
+::slotted(select:focus),
+::slotted(textarea:focus) {
+  outline: none;
+  border-color: var(--rosa-escuro, #f2789f);
+  box-shadow: 0 0 0 2px rgba(242, 120, 159, 0.2);
+}

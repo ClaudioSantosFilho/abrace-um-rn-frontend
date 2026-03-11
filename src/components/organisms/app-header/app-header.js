@@ -1,11 +1,28 @@
 class AppHeader extends HTMLElement {
   connectedCallback() {
-    const currentPage = window.location.pathname
+    const currentPage = window.location.pathname;
+    
+    // Check if the stylesheet is already injected into the head
+    if (!document.querySelector('link[href*="app-header.css"]')) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '/src/components/organisms/app-header/app-header.css';
+      document.head.appendChild(link);
+    }
+    
+    // Also load app-button atom if not loaded, since organisms use atoms
+    if (!document.querySelector('script[src*="app-button.js"]')) {
+      const script = document.createElement('script');
+      script.src = '/src/components/atoms/app-button/app-button.js';
+      script.type = 'module';
+      document.head.appendChild(script);
+    }
+
     this.innerHTML = `
     <header class="app-header">
       <div class="container app-header-content">
         <a href="index.html" class="logo">
-          <img src="assets/Logo.png" width="80" height="60" />
+          <img src="src/assets/shared/Logo.png" width="80" height="60" />
         </a>
 
         <div class="desktop-nav">
@@ -40,12 +57,12 @@ class AppHeader extends HTMLElement {
           </ul>
 
           <div class="desktop-nav-buttons">
-            <a class="botao pequeno-rosa" href="receber.html">
+            <app-button href="receber.html" variant="pequeno-rosa">
               Receber
-            </a>
-            <a class="botao pequeno-azul" href="doar-inicial.html">
+            </app-button>
+            <app-button href="doar-inicial.html" variant="pequeno-azul">
               Doar
-            </a>
+            </app-button>
           </div>
         </div>
 
@@ -60,7 +77,7 @@ class AppHeader extends HTMLElement {
         <div class="offcanvas sidebar-container offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
             <a href="index.html" class="logo">
-              <img src="assets/Logo.png" width="80" height="60" />
+              <img src="src/assets/shared/Logo.png" width="80" height="60" />
             </a>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
           </div>
@@ -97,45 +114,21 @@ class AppHeader extends HTMLElement {
             </ul>
 
             <div class="sidebar-buttons">
-              <a class="botao pequeno-rosa" href="receber.html">
+              <app-button href="receber.html" variant="pequeno-rosa">
                 Receber
-              </a>
-              <a class="botao pequeno-azul" href="doar-inicial.html">
+              </app-button>
+              <app-button href="doar-inicial.html" variant="pequeno-azul">
                 Doar
-              </a>
+              </app-button>
             </div>
           </div>
         </div>
       </div>
     </header>
-`
+`;
   }
 }
 
-class AppFooter extends HTMLElement {
-  connectedCallback() {
-    this.innerHTML = `
-      <footer>
-        <div class="footer-container">
-          <div class="footer-left">
-            <img src="./assets/LogoTexto.png" alt="LogoText" class="footer-logo" />
-          </div>
-          <div class="footer-right">
-            <p>Acompanhe nas redes</p>
-            <div class="social-icons">
-              <a target="_blank" href="https://www.instagram.com/abraceumrn/">
-                <img src="./assets/instagram.svg" alt="Instagram" />
-              </a>
-              <a target="_blank" href="https://wa.me/5583987075415">
-                <img src="./assets/wpp.svg" alt="WhatsApp" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
-    `
-  }
+if (!window.customElements.get('app-header')) {
+  window.customElements.define('app-header', AppHeader);
 }
-
-window.customElements.define('app-header', AppHeader)
-window.customElements.define('app-footer', AppFooter)

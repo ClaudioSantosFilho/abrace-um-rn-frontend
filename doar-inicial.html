@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Doação | Abrace um RN</title>
-    <link rel="icon" type="image/x-icon" href="assets/Logo.png" />
+    <link rel="icon" type="image/x-icon" href="src/assets/shared/Logo.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
       rel="stylesheet"
@@ -19,9 +19,9 @@
       integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
       crossorigin="anonymous"
     />
-    <link href="css/reset.css" rel="stylesheet" />
-    <link href="css/globals.css" rel="stylesheet" />
-    <link href="css/doar.css" rel="stylesheet" />
+    <link href="src/shared/css/reset.css" rel="stylesheet" />
+    <link href="src/shared/css/globals.css" rel="stylesheet" />
+    <link href="src/pages/doar/doar.css" rel="stylesheet" />
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js"
@@ -29,77 +29,27 @@
       crossorigin="anonymous"
       defer
     ></script>
-    <script defer src="js/custom-elements.js"></script>
-    <script defer src="js/donates.js"></script>
+    <script defer src="src/js/custom-elements.js"></script>
+    <script type="module" src="src/pages/doar/doar-viewmodel.js"></script>
   </head>
   <body>
     <app-header> </app-header>
-    <main class="container">
+    <main class="container py-5">
       <div class="content-center">
-        <div class="introducao">
-          <h1 class="fw-bold fs-1 text-center">Como você pode ajudar</h1>
-          <p class="text-center mt-3">
+        <div class="introducao mb-5">
+          <h1 class="fw-bold fs-1 text-center" style="color: var(--rosa-escuro)">Como você pode ajudar</h1>
+          <p class="text-center mt-3 fs-5 text-secondary">
             Explore abaixo as diferentes maneiras de contribuir e fazer a
             diferença na vida de mães e bebês em situação de vulnerabilidade.
           </p>
         </div>
-        <div class="row mt-4 cards-container" id="cards-container">
-          <div class="col-md-4">
-            <div class="card h-100" onclick="mostrarSection('money')">
-              <div class="card-body">
-                <img
-                  src="./assets/Icone-doar-em-dinheiro.svg"
-                  alt="Doar em dinheiro"
-                  class="card-icon"
-                />
-                <h5 class="card-title">DOAÇÃO EM DINHEIRO</h5>
-                <p class="card-text">
-                  Contribua com qualquer valor para a compra de itens
-                  essenciais, como kits de higiene e enxoval, ou para ajudar a
-                  cobrir custos operacionais, como transporte e manutenção da
-                  sede.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100" onclick="mostrarSection('used')">
-              <div class="card-body">
-                <img
-                  src="./assets/Icone-doar-usados.svg"
-                  alt="Doar itens usados"
-                  class="card-icon"
-                />
-                <h5 class="card-title">DOAÇÃO DE ITENS USADOS</h5>
-                <p class="card-text">
-                  Doe roupas, brinquedos e outros itens de bebê que você não usa
-                  mais. Esses itens serão entregues diretamente às mães que
-                  precisam de ajuda.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100" onclick="mostrarSection('store')">
-              <div class="card-body">
-                <img
-                  src="./assets/Icone-lojinha.svg"
-                  alt="Lojinha"
-                  class="card-icon"
-                />
-                <h5 class="card-title">COMPRE NA LOJINHA</h5>
-                <p class="card-text">
-                  Apoie o projeto comprando produtos customizados na nossa
-                  lojinha. Todo o dinheiro arrecadado com as vendas será
-                  revertido para as ações sociais, ajudando ainda mais mães a
-                  cuidarem dos seus bebês.
-                </p>
-              </div>
-            </div>
-          </div>
+        
+        <!-- Rendered by DoarViewModel (Cards) -->
+        <div class="row mt-4 cards-container justify-content-center" id="cards-container">
         </div>
 
-        <div id="section-content" class="dynamic-content"></div>
+        <!-- Rendered by DoarViewModel (Section Content) -->
+        <div id="section-content" class="dynamic-content w-100"></div>
       </div>
     </main>
     <app-footer></app-footer>

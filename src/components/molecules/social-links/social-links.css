@@ -1,0 +1,21 @@
+:host {
+  display: flex;
+  align-items: center;
+  gap: var(--social-gap, 0.5rem);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+::slotted(a) {
+  text-decoration: none;
+}
+
+::slotted(a) img, img {
+  height: var(--icon-size, 24px);
+  margin: 0 var(--icon-margin, 10px);
+  transition: transform 0.2s ease;
+}
+
+::slotted(a:hover) img, img:hover {
+  transform: scale(1.1);
+}

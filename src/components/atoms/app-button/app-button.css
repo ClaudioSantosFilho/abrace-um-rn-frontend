@@ -1,0 +1,77 @@
+.botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: var(--font-family, "Montserrat", sans-serif);
+  padding: 10px 20px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.botao:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.botao:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.pequeno-rosa {
+  background-color: var(--rosa-escuro, #f68597);
+  color: white;
+  border-radius: 20px;
+}
+
+.pequeno-azul {
+  background-color: var(--azul-escuro, #4bb9ba);
+  color: white;
+  border-radius: 20px;
+}
+
+.pequeno-branco {
+  background-color: white;
+  padding: 8px 30px;
+  border-radius: 10px;
+  color: var(--rosa-escuro, #f68597);
+}
+
+.branco-letra-azul {
+  background-color: white;
+  color: var(--azul-escuro, #4bb9ba);
+  min-height: 80px;
+  width: 100%;
+  font-size: clamp(20px, 4vw, 45px);
+  padding: 15px;
+}
+
+.branco-letra-rosa {
+  background-color: white;
+  color: var(--rosa-escuro, #f68597);
+  width: 100%;
+  min-height: 80px;
+  font-size: clamp(20px, 4vw, 45px);
+  padding: 15px;
+}
+
+.rosa-letra-branca {
+  background-color: var(--rosa-escuro, #f68597);
+  color: white;
+  width: 100%;
+  max-width: 280px;
+  min-height: 80px;
+  padding: 15px;
+  font-size: clamp(20px, 4vw, 45px);
+  display: block;
+  margin: 0 auto;
+}
