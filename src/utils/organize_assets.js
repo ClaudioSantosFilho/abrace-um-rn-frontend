@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const assetsDir = 'src/assets';
+const assetsDir = ''; // antes de executar esse script, lembre-se de conferir os imports das páginas
 const assets = fs.readdirSync(assetsDir);
 
 // Define mapping of root HTML files to their corresponding src/pages folders

@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const rootDir = __dirname;
+const rootDir = path.resolve(__dirname, ''); // antes de executar esse script, lembre-se de conferir os imports das páginas
 const cssDir = path.join(rootDir, 'src', 'css');
 
 if (!fs.existsSync(cssDir)) {
