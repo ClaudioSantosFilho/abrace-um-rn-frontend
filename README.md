@@ -173,7 +173,7 @@ cd abrace-um-rn-frontend
 
 ### Professora: 
 
-- Roberta Ribeiro Guedes Pereira 
+- [Roberta Ribeiro Guedes Pereira]() 
 
 ### Equipe responsável pelo projeto atualmente 2026.01:
 
@@ -181,9 +181,9 @@ cd abrace-um-rn-frontend
 - [Claudio Alves dos Santos Filho](https://github.com/ClaudioSantosFilho)
 - [Gabriel Barbosa Claudino]()
 - [Gilberto Henriques da Fonseca Segundo](https://github.com/Sircrawler)
-- [Jeferson Thiago Felix do Nascimento]()
+- [Jeferson Thiago Felix do Nascimento](https://github.com/Jeffersonthiagofn)
 - [Mateus Dantas de Oliveira](https://github.com/MateusDantas123)
-- [Nikson Gabriel Santos Silva]()
+- [Nikson Gabriel Santos Silva](https://github.com/Nikson-silva)
 - [Thomas Arlles da Silva](https://github.com/Thomasarlles)
 
 ### Equipe responsável por dar ínicio ao projeto Abrace um RN: 
